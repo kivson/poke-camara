@@ -1,0 +1,53 @@
+div.carta {
+    max-width: 15em;
+    background-color: #008286;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    position: relative;
+
+}
+
+.carta .titulo{
+    color: #FFFFFF;
+    margin: 0;
+    padding-top: 10px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.carta img {
+    width: 90%;
+    padding: 5%;
+}
+
+div.carta:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.atributos{
+    float: left;
+    position: absolute;
+    bottom: 4%;
+    left: 5%;
+    width: 90%;
+
+    height: 33%;
+    z-index: 1000;
+    background-color: rgba(5, 25, 41, 0.85);
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.atributos h4 {
+    margin: 0;
+    padding: 0;
+}
+.atributos p {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+.atributos div {
+    margin-top: 15px;
+    margin-left: 5px;
+}
