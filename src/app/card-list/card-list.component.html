@@ -1,0 +1,3 @@
+<div *ngFor="let congresista of (congresistas | async)" >
+    <app-carta [parlamentarId]="congresista.idParlamentar"></app-carta>
+</div>
