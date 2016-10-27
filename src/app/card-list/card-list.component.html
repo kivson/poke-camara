@@ -1,3 +1,6 @@
-<div *ngFor="let congresista of (congresistas | async)" >
-    <app-carta [parlamentarId]="congresista.idParlamentar"></app-carta>
+
+<div class="card-list pure-g" >
+    <pagination-controls (pageChange)="p = $event" class="pure-u-1-1"></pagination-controls>
+    <app-carta class="carousel-cell pure-u-1-4" *ngFor="let congresista of (congresistas | async)  | paginate: { itemsPerPage: 8, currentPage: p }" [parlamentarId]="congresista.idParlamentar"></app-carta>
 </div>
+

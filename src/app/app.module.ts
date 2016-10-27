@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import {CongressistaService} from "./services/congressista.service";
 import { CartaComponent } from './carta/carta.component';
 import { CardListComponent } from './card-list/card-list.component';
+import {Ng2PaginationModule} from 'ng2-pagination';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CardListComponent } from './card-list/card-list.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    Ng2PaginationModule
   ],
   providers: [CongressistaService],
   bootstrap: [AppComponent]

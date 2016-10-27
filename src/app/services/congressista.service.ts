@@ -15,6 +15,11 @@ export class CongressistaService {
     constructor(private http: Http) {
         this.todos_congressistas = this.http.get("/assets/dados/saida.json")
             .map(resp => resp.json())
+            .map(congresistas => congresistas.filter(c=> c.condicao == "Titular"))
+            .map(congresistas => congresistas.map(c => {
+                c.nomeParlamentar = c.nomeParlamentar.toLowerCase();
+                return c;
+            }))
             .map(congresistas => {
             this.maior_comissao = Math.max(... congresistas.map(c => c.comissoes_stats['Titular'] || 0));
 
@@ -37,7 +42,8 @@ export class CongressistaService {
                 congresista['score']['atividade'] = Math.floor(total / this.maior_proposicao * 100);
                 return congresista;
             });
-        })
+            })
+            .cache()
 
     }
 
