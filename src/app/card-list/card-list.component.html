@@ -1,6 +1,9 @@
-
-<div class="card-list pure-g" >
-    <pagination-controls (pageChange)="p = $event" class="pure-u-1-1"></pagination-controls>
-    <app-carta class="carousel-cell pure-u-1-4" *ngFor="let congresista of (congresistas | async)  | paginate: { itemsPerPage: 8, currentPage: p }" [parlamentarId]="congresista.idParlamentar"></app-carta>
+<div class="card-list container">
+    <div class="row">
+        <app-carta class="col-md-3"
+                   *ngFor="let congresista of (congresistas | async)  | paginate: { itemsPerPage: 8, currentPage: p }"
+                   [parlamentarId]="congresista.idParlamentar"></app-carta>
+    </div>
+    <pagination-controls (pageChange)="p = $event" class="row"></pagination-controls>
 </div>
 

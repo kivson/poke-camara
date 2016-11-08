@@ -8,11 +8,16 @@ import {Congressista} from "../model/congressista";
 @Injectable()
 export class CongressistaService {
     todos_congressistas:Observable<Congressista[]>;
+    mapa_proposicoes;
     maior_presenca:number;
     maior_comissao:number;
     maior_proposicao:number;
 
     constructor(private http: Http) {
+        this.http.get("/assets/dados/mapa.json")
+            .map(resp => resp.json())
+            .subscribe(resp => this.mapa_proposicoes =resp);
+
         this.todos_congressistas = this.http.get("/assets/dados/saida.json")
             .map(resp => resp.json())
             .map(congresistas => congresistas.filter(c=> c.condicao == "Titular"))
@@ -46,7 +51,9 @@ export class CongressistaService {
             .cache()
 
     }
-
+    nome_completo_proposicao(sigla){
+        return this.mapa_proposicoes[sigla] || sigla
+    }
     by_parlamenta_id(parlaentarId){
         return this.todos_congressistas.flatMap(_=>_).filter(p => p.idParlamentar == parlaentarId).first()
     }

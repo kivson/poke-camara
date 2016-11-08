@@ -23,5 +23,12 @@ export class CardListComponent implements OnInit{
 
     }
 
+    filtrar(nome:string){
+        this.congresistas = this.congressistaService.todos_congressistas.map(
+            congresistas => congresistas.filter(
+                congresista => congresista.nomeParlamentar.toLowerCase().indexOf(nome.toLowerCase()) != -1
+            )
+        )
+    }
 
 }

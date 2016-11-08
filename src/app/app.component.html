@@ -1,9 +1,11 @@
-<div class="content pure-g">
-    <div class="busca">
-        <form><input type="search" placeholder="Busca"></form>
+<div class="content container">
+    <div class="busca row">
+        <div>
+            <form><input #input type="search" placeholder="Busca" (keyup)="cardlist.filtrar(input.value)"></form>
+        </div>
     </div>
-    <div>
-        <card-list></card-list>
+    <div class="row">
+        <card-list #cardlist></card-list>
     </div>
 </div>
 

@@ -1,18 +1,23 @@
 
-.content {
-    max-width: 1024px;
-    margin: auto;
-}
+/*.content {*/
+    /*max-width: 1024px;*/
+    /*margin: auto;*/
+/*}*/
 
 .busca{
     position: relative;
-    margin: 100px auto 50px;
+    margin: 50px auto 25px;
 
+}
+
+.busca form {
+    margin: auto;
+    width: 530px;
 }
 
 .busca input {
     font-weight: 200;
-    color: #D1C4E9;
+
     font-size: 4em;
     outline: 0;
     border-radius: 0;

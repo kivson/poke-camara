@@ -24,8 +24,9 @@ div.carta {
     align-items: center;
     color: white;
 }
-.titulo h3{
+.titulo h2{
     margin: auto;
+    white-space:nowrap;
 }
 
 
@@ -62,11 +63,13 @@ div.carta:hover {
 .atributos h3 {
     margin: 0;
     padding: 0;
+    font-size: 17px;
 }
 .atributos h2 {
     float: right;
     margin: 0;
     padding: 0;
+    font-size: 20px;
 }
 .atributos div {
     margin-top: 5px;
