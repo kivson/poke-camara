@@ -4,6 +4,6 @@
                    *ngFor="let congresista of (congresistas | async)  | paginate: { itemsPerPage: 8, currentPage: p }"
                    [parlamentarId]="congresista.idParlamentar"></app-carta>
     </div>
-    <pagination-controls (pageChange)="p = $event" class="row"></pagination-controls>
+    <pagination-controls (pageChange)="p = $event" class="row paginacao"></pagination-controls>
 </div>
 

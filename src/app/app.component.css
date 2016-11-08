@@ -17,12 +17,12 @@
 
 .busca input {
     font-weight: 200;
-
+    color: #113C51;
     font-size: 4em;
     outline: 0;
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid #9e9e9e;
+    border-bottom: 1px solid #113C51;
     background: 0 0;
     width: 530px;
     float: left;
