@@ -1,7 +1,7 @@
 div.carta {
     width: 15em;
     height: 21em;
-    background-image: url("/assets/img/card_template.png");
+    background-image: url("https://s3-sa-east-1.amazonaws.com/avisame/outros/card_template.png");
     background-size: 100% 100%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
