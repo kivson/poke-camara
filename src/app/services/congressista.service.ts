@@ -3,7 +3,7 @@ import {Http} from "@angular/http";
 import "rxjs/Rx";
 import {Observable} from "rxjs";
 import {Congressista} from "../model/congressista";
-
+import {environment} from "../../environments/environment"
 
 @Injectable()
 export class CongressistaService {
@@ -14,11 +14,11 @@ export class CongressistaService {
     maior_proposicao:number;
 
     constructor(private http: Http) {
-        this.http.get("/assets/dados/mapa.json")
+        this.http.get(environment.baseUrl+"/assets/dados/mapa.json")
             .map(resp => resp.json())
             .subscribe(resp => this.mapa_proposicoes =resp);
 
-        this.todos_congressistas = this.http.get("/assets/dados/saida.json")
+        this.todos_congressistas = this.http.get(environment.baseUrl+"/assets/dados/saida.json")
             .map(resp => resp.json())
             .map(congresistas => congresistas.filter(c=> c.condicao == "Titular"))
             .map(congresistas => congresistas.map(c => {
